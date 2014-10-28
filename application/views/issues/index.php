@@ -16,8 +16,23 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="<?php echo addActiveClass('active', '/issues') ?>"><a href="#">Home</a></li>
         <li><a href="#">Member Area</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="#">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="container">
+  <div id="map-canvas"></div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="text-center">
+      <p class="navbar-text navbar-right">&copy; 2014 MMB</p>
+    </div>
+  </div>
+</nav>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_r0PCbmCb9jhB-6Nr8WBhae6QelSUYCE"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/main.js') ?>"></script>
