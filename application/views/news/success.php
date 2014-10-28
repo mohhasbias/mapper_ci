@@ -1,1 +1,0 @@
-<h2>News Successfully Added</h2>
