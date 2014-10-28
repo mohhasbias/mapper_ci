@@ -7,7 +7,8 @@ module.exports = function(grunt){
 		php: {
 			watch: {
 				options: {
-					open: true		
+					open: true,
+					hostname: '0.0.0.0'		
 				}
 			}
 		},
