@@ -7,5 +7,8 @@ function addCssClass($class_name, $condition = TRUE)
 
 function addActiveClass($class_name, $url_segment)
 {
-	return addCssClass($class_name, current_url() === site_url($url_segment));
+	$ci =& get_instance();
+	$current_url_segment = '/' . $ci->router->fetch_class() . '/' . $ci->router->fetch_method();
+	// echo($current_url_segment);
+	return addCssClass($class_name, $current_url_segment === $url_segment);
 }

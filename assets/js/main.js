@@ -18,7 +18,7 @@ function loadGoogleMap(position) {
       document.getElementById('map-canvas'),
       {
         center: { lat: position.coords.latitude, lng: position.coords.longitude },
-        zoom: 20,
+        zoom: 19,
         scaleControl: true
       }
     );
