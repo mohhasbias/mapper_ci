@@ -36,15 +36,22 @@
       <h2 style="margin-top: 0;">List of Issues</h2>
       <div style="height: 100%;overflow-y:scroll;overflow-x:hidden;">
         <?php for($i = 0; $i < 20; $i++): ?>
-          <div class="row">
+          <div class="row" style="margin-bottom: 10px;margin-right: 5px;">
             <div class="col-xs-4">
               <img src='http://placehold.it/120' alt='' class="img-thumbnail">
             </div>
             <div class="col-xs-8">
               <h3 style="margin-top: 0">
                 <img style="height: 23px;margin-top: -5px;margin-bottom: 0" src="http://dynamic.mmb.pens.ac.id/templates/dynamic/assets/img/iconMerah.png">
-                <?php echo "Issue #" . ($i+1) ?> <br>
+                <?php echo "Issue #" . ($i+1) ?> 
+                <div class="btn-group pull-right">
+                  <a class="btn btn-default btn-xs" href="#">View</a>
+                  <a class="btn btn-default btn-xs" href="#">Edit</a>
+                  <a class="btn btn-default btn-xs" href="#">Delete</a>
+                </div>
+                <br>
                 <small>2014-10-26 19:35 | Status: Issue</small>
+
               </h3>
               <p class="lead">
                 Some description about the issue. Maybe some suggestion
