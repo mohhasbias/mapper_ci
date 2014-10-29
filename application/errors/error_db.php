@@ -55,10 +55,18 @@ p {
 </head>
 <body>
 	<div id="container">
-		<?php if(defined(ENVIRONMENT) && ENVIRONMENT === 'development'): ?>
+		<?php
+			if ($_SERVER['SERVER_NAME'] == '0.0.0.0') {
+			    define('ENVIRONMENT', 'development');
+			} else {
+			    define('ENVIRONMENT', 'production');
+			}
+		?>
+
+		<?php if(ENVIRONMENT === 'development'): ?>
 			<h1><?php echo $heading; ?></h1>
 			<?php echo $message; ?>
-		<?php elseif(defined(ENVIRONMENT) && ENVIRONMENT === 'production'): ?>
+		<?php elseif(ENVIRONMENT === 'production'): ?>
 			<h1>Oops, our database is in error</h1>
 			There is something wrong with our database. hopefully, we could fix it soon.
 			Thank you.
