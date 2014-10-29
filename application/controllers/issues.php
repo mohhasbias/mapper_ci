@@ -29,6 +29,8 @@ class Issues extends CI_Controller {
 
 		$this->form_validation->set_rules('title','Title','required');
 		$this->form_validation->set_rules('description','Description','required');
+		$this->form_validation->set_rules('longitude', 'Longitude', 'required');
+		$this->form_validation->set_rules('latitude', 'Latitude', 'required');
 
 		if($this->form_validation->run() === FALSE)
 		{

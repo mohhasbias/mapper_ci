@@ -85,3 +85,15 @@ function previewImage(){
     }
   }
 }
+
+jQuery(function($){
+  var longitude = $('input[name="longitude"');
+  var latitude = $('input[name="latitude"');
+  if(longitude && latitude){
+    console.log("ouch");
+    navigator.geolocation.getCurrentPosition(function(position){
+      longitude.val(position.coords.longitude);
+      latitude.val(position.coords.latitude);
+    });
+  }
+})
