@@ -55,8 +55,14 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<?php if(defined(ENVIRONMENT) && ENVIRONMENT === 'development'): ?>
+			<h1><?php echo $heading; ?></h1>
+			<?php echo $message; ?>
+		<?php elseif(defined(ENVIRONMENT) && ENVIRONMENT === 'production'): ?>
+			<h1>Oops, our database is in error</h1>
+			There is something wrong with our database. hopefully, we could fix it soon.
+			Thank you.
+		<?php endif ?>
 	</div>
 </body>
 </html>
