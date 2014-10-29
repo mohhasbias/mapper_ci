@@ -59,13 +59,14 @@ function initialize() {
     return;
   }
 
-  var positionPENS = {
-    coords: {
-      latitude: -7.2764785,
-      longitude: 112.7941515
-    }
-  };
-  loadGoogleMap(positionPENS);
+  // var positionPENS = {
+  //   coords: {
+  //     latitude: -7.2764785,
+  //     longitude: 112.7941515
+  //   }
+  // };
+  // loadGoogleMap(positionPENS);
+  navigator.geolocation.getCurrentPosition(loadGoogleMap);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -86,14 +87,16 @@ function previewImage(){
   }
 }
 
-jQuery(function($){
+$(document).ready(function(){
   var longitude = $('input[name="longitude"');
   var latitude = $('input[name="latitude"');
   if(longitude && latitude){
     console.log("ouch");
     navigator.geolocation.getCurrentPosition(function(position){
       longitude.val(position.coords.longitude);
+      longitude.attr('value', longitude.val());
       latitude.val(position.coords.latitude);
+      latitude.value = latitude.val();
     });
   }
 })

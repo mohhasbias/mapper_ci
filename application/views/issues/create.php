@@ -5,25 +5,36 @@
 		<h2>Add New Issue</h2>
 		<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>	
 		<?php echo form_open('issues/create') ?>
-			<div class="form-group">
-				<label for="title">Title</label>
-				<input class="form-control" type="input" name="title"/>
-			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="title">Title</label>
+						<input class="form-control" type="input" name="title"/>
+					</div>
 
-			<div class="form-group">
-				<label for="description">Description</label>
-				<textarea class="form-control" name="description"></textarea>
-			</div>
+					<div class="form-group">
+						<label for="description">Description</label>
+						<textarea class="form-control" name="description" rows="5"></textarea>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div id="map-canvas" style="min-height:50%;"></div>
+					<div class="row">
+						<div class="form-group col-xs-6">
+							<label for="longitude">Longitude</label>
+							<input class="form-control" type="input" name="longitude" readonly/>
+						</div>
 
-			<div class="form-group">
-				<label for="longitude">Longitude</label>
-				<input class="form-control" type="input" name="longitude" value="" disabled/>
+						<div class="form-group col-xs-6">
+							<label for="latitude">Latitude</label>
+							<input class="form-control" type="input" name="latitude" readonly/>
+						</div>
+					</div>
+				</div>
 			</div>
+			
 
-			<div class="form-group">
-				<label for="latitude">Latitude</label>
-				<input class="form-control" type="input" name="latitude" value="" disabled/>
-			</div>
+			
 
 			<div class="form-group">
 				<label for="photo">Photo</label>
