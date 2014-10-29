@@ -25,7 +25,7 @@ function loadGoogleMap(position) {
 
 //  $.getJSON('data.json', function (data) {
   var restBaseURL = 'http://api.mohhasbias.com/index.php';
-  $.getJSON(restBaseURL + '/lighting_survey', function (data) {
+  $.getJSON(restBaseURL + '/issues', function (data) {
     console.log(data);
     var i, marker, contentString;
     for (i = 0; i < data.length; i++) {
@@ -70,3 +70,18 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 // google.maps.event.addDomListener(window, 'push', initialize);
+
+
+
+function previewImage(){
+  if(typeof FileReader !== "undefined"){
+    var oFReader = new FileReader();
+
+    oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+    oFReader.onload = function(oFREvent){
+      console.log(oFREvent.target.result);
+      document.getElementById("uploadPreview").src = oFREvent.target.result;
+    }
+  }
+}

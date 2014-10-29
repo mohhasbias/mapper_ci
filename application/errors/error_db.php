@@ -68,7 +68,7 @@ p {
 			<?php echo $message; ?>
 		<?php elseif(ENVIRONMENT === 'production'): ?>
 			<h1>Oops, our database is in error</h1>
-			<p>There is something wrong with our database. hopefully, we could fix it soon.
+			<p>There is something wrong with our database. We are sorry for this. Hopefully, we could fix it soon.
 			Thank you.</p>
 		<?php endif ?>
 	</div>

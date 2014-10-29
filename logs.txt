@@ -1,9 +1,10 @@
 [] implement issues feature
-- [x] implement read all issue page
+- [x] implement view all issue page
 - [] implement create issues feature
 - [] implement delete issues
+- [] implement edit issues
 [] implement users feature
-- [] create
-- [] update
-- [] delete
-- [] read
+- [] create user
+- [] update user
+- [] delete user
+- [] view user
