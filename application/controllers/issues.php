@@ -38,7 +38,7 @@ class Issues extends CI_Controller {
 		}
 		else 
 		{
-			//$this->news_model->add_issues();
+			$this->issue_model->add_issues();
 			header('Refresh:3;/issues/index');
 			$data["success"] = TRUE;
 			$this->render($data);

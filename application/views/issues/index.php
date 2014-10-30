@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-6">
       <div id="map-canvas"></div>
@@ -10,7 +10,7 @@
           <p class="lead text-muted text-center"><em>-- No Issue Yet --</em></p>
         <?php endif; ?>
         <?php foreach($issues as $issue): ?>
-          <div class="row" style="margin-bottom: 10px;margin-right: 5px;">
+          <div class="row" style="margin-bottom: 10px;">
             <div class="col-xs-4">
               <img src="<?php echo $issue['photo'] ?>" alt="<?php echo $issue['title']?>" class="img-thumbnail">
             </div>
