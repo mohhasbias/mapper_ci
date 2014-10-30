@@ -21,7 +21,7 @@
                 <div class="btn-group pull-right">
                   <a class="btn btn-default btn-xs" href="#">View</a>
                   <a class="btn btn-default btn-xs" href="#">Edit</a>
-                  <a class="btn btn-default btn-xs" href="#">Delete</a>
+                  <a class="btn btn-default btn-xs" data-delete href="<?php echo site_url('issues/delete/' . $issue['id']) ?>">Delete</a>
                 </div>
                 <br>
                 <small><?php echo $issue['timestamp'] ?> | Status: <?php echo $issue['status'] ?></small>

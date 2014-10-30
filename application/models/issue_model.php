@@ -30,4 +30,12 @@ class Issue_model extends CI_Model {
 		
 		return $this->db->insert('issues', $data);
 	}
+
+	public function delete_issue($id)
+	{
+		if($id)
+		{
+			return $this->db->delete('issues', array('id' => $id));
+		}
+	}
 }

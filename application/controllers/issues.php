@@ -45,6 +45,31 @@ class Issues extends CI_Controller {
 		}
 	}
 
+	public function delete()
+	{
+		$id = $this->uri->segment(3);
+
+		if($id)
+		{
+			$issue = $this->issue_model->get_issues($id);
+			if($issue)
+			{
+				$data['issue'] = $issue;
+				$this->issue_model->delete_issue($id);
+				header('Refresh:3;/issues/index');
+				$this->render($data);
+			}
+			else
+			{
+				redirect('issues/index');
+			}
+		}
+		else
+		{
+			redirect('issues/index');
+		}
+	}
+
 	private function render($data)
 	{
 		$uri_segment = $this->router->fetch_class() . '/' . $this->router->fetch_method();
