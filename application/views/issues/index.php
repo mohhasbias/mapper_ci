@@ -12,7 +12,7 @@
         <?php foreach($issues as $issue): ?>
           <div class="row" style="margin-bottom: 10px;">
             <div class="col-xs-4">
-              <img src="<?php echo $issue['photo'] ?>" alt="<?php echo $issue['title']?>" class="img-thumbnail">
+              <img src="<?php echo translateFilePath($issue['photo']); ?>" alt="<?php echo $issue['title']?>" class="img-thumbnail">
             </div>
             <div class="col-xs-8">
               <h3 style="margin-top: 0">

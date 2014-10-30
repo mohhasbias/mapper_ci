@@ -17,18 +17,12 @@ class Issue_model extends CI_Model {
 		return $query->row_array();
 	}
 
-	public function add_issues()
+	public function add_issues($data)
 	{
-		$data = array(
-			'title' => $this->input->post('title'),
-			'description' => $this->input->post('description'),
-			'longitude' => $this->input->post('longitude'),
-			'latitude' => $this->input->post('latitude'),
-			'photo' => $this->input->post('photo'),
-			'status' => 'issue'
-			);
-		
-		return $this->db->insert('issues', $data);
+		if($data)
+		{
+			return $this->db->insert('issues', $data);
+		}
 	}
 
 	public function delete_issue($id)

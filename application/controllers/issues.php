@@ -32,16 +32,34 @@ class Issues extends CI_Controller {
 		$this->form_validation->set_rules('longitude', 'Longitude', 'required');
 		$this->form_validation->set_rules('latitude', 'Latitude', 'required');
 
+		$data['issue'] = $this->input->post();
+
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->render($data);
 		}
 		else 
 		{
-			$this->issue_model->add_issues();
-			header('Refresh:3;/issues/index');
-			$data["success"] = TRUE;
-			$this->render($data);
+			if($this->do_upload())
+			{
+				$data = array(
+						'title' => $this->input->post('title'),
+						'description' => $this->input->post('description'),
+						'longitude' => $this->input->post('longitude'),
+						'latitude' => $this->input->post('latitude'),
+						'photo' => $this->upload->data()['full_path'],
+						'status' => 'issue'
+					);
+				$this->issue_model->add_issues($data);
+
+				header('Refresh:3;/issues/index');
+				$data["success"] = TRUE;
+			}
+			else
+			{
+				var_dump($this->upload->display_errors());
+			}
+			$this->render($data);			
 		}
 	}
 
@@ -76,5 +94,15 @@ class Issues extends CI_Controller {
 		$this->load->view('templates/header', $data);
 		$this->load->view($uri_segment, $data);
 		$this->load->view('templates/footer');
+	}
+
+	private function do_upload()
+	{
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		
+		$this->load->library('upload', $config);
+
+		return $this->upload->do_upload();
 	}
 }

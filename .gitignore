@@ -1,4 +1,5 @@
 /user_guide
 /application/config/database.php
 /application/config/config.php
+/uploads
 node_modules
