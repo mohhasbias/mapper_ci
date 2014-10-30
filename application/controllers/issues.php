@@ -9,13 +9,13 @@ class Issues extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Issues';
-
 		$data['issues'] = $this->issue_model->get_issues();
 
 		// $this->load->view('templates/header', $data);
 		// $this->load->view('issues/index', $data);
 		// $this->load->view('templates/footer');
+
+		$data['title'] = 'Issues';
 
 		$this->render($data);
 	}
@@ -42,13 +42,14 @@ class Issues extends CI_Controller {
 		{
 			if($this->do_upload())
 			{
-				$uploadData = $this->upload->data();
+				$uploadedFileURL = $this->upload->data();
+				$uploadedFileURL = translateFilePathToURL($uploadedFileURL['full_path']);
 				$data = array(
 						'title' => $this->input->post('title'),
 						'description' => $this->input->post('description'),
 						'longitude' => $this->input->post('longitude'),
 						'latitude' => $this->input->post('latitude'),
-						'photo' => $uploadData['full_path'],
+						'photo' => $uploadedFileURL,
 						'status' => 'issue'
 					);
 				$this->issue_model->add_issues($data);
@@ -72,7 +73,8 @@ class Issues extends CI_Controller {
 		{
 			$issue = $this->issue_model->get_issues($id);
 			if($issue)
-			{
+			{		
+				$data['title'] = 'Delete Issue';
 				$data['issue'] = $issue;
 				$this->issue_model->delete_issue($id);
 				header('Refresh:3;/issues/index');

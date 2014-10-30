@@ -13,7 +13,7 @@ function addActiveClass($class_name, $url_segment)
 	return addCssClass($class_name, $current_url_segment === $url_segment);
 }
 
-function translateFilePath($full_path)
+function translateFilePathToURL($full_path)
 {
 	return '/' . str_replace(constant("FCPATH"),"",$full_path);
 }

@@ -12,21 +12,23 @@
         <?php foreach($issues as $issue): ?>
           <div class="row" style="margin-bottom: 10px;">
             <div class="col-xs-4">
-              <img src="<?php echo translateFilePath($issue['photo']); ?>" alt="<?php echo $issue['title']?>" class="img-thumbnail">
+              <img src="<?php echo $issue['photo']; ?>" alt="<?php echo $issue['title']?>" class="img-thumbnail">
             </div>
             <div class="col-xs-8">
-              <h3 style="margin-top: 0">
-                <img style="height: 23px;margin-top: -5px;margin-bottom: 0" src="http://dynamic.mmb.pens.ac.id/templates/dynamic/assets/img/iconMerah.png">
-                <?php echo $issue['title']; ?> 
-                <div class="btn-group pull-right">
-                  <a class="btn btn-default btn-xs" href="#">View</a>
-                  <a class="btn btn-default btn-xs" href="#">Edit</a>
-                  <a class="btn btn-default btn-xs" data-delete href="<?php echo site_url('issues/delete/' . $issue['id']) ?>">Delete</a>
+              <div class="row">
+                <div class="col-xs-12">
+                  <h3 class="pull-left" style="margin-top: 0;margin-bottom:0;">
+                    <img style="height: 23px;margin-top: -5px;margin-bottom: 0;" src="http://dynamic.mmb.pens.ac.id/templates/dynamic/assets/img/iconMerah.png">
+                    <?php echo $issue['title']; ?> 
+                  </h3>
+                  <div class="btn-group pull-right">
+                    <a class="btn btn-default btn-xs" href="#">View</a>
+                    <a class="btn btn-default btn-xs" href="#">Edit</a>
+                    <a class="btn btn-default btn-xs" data-delete href="<?php echo site_url('issues/delete/' . $issue['id']) ?>">Delete</a>
+                  </div>
                 </div>
-                <br>
-                <small><?php echo $issue['timestamp'] ?> | Status: <?php echo $issue['status'] ?></small>
-
-              </h3>
+              </div>
+              <p><small class="text-muted"><?php echo $issue['timestamp'] ?> | Status: <?php echo $issue['status'] ?></small></p>
               <p class="lead">
                 <?php echo $issue['description'] ?>
               </p>  
