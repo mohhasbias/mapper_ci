@@ -42,12 +42,13 @@ class Issues extends CI_Controller {
 		{
 			if($this->do_upload())
 			{
+				$uploadData = $this->upload->data();
 				$data = array(
 						'title' => $this->input->post('title'),
 						'description' => $this->input->post('description'),
 						'longitude' => $this->input->post('longitude'),
 						'latitude' => $this->input->post('latitude'),
-						'photo' => $this->upload->data()['full_path'],
+						'photo' => $uploadData['full_path'],
 						'status' => 'issue'
 					);
 				$this->issue_model->add_issues($data);
