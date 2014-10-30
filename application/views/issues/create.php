@@ -1,4 +1,4 @@
-<div class="container" style="margin-bottom: 140px;">
+<div class="container-fluid" style="margin-bottom: 140px;">
 	<?php if(isset($success) && $success): ?>
 		<p class="alert alert-success">Successfully added new issue. You will be redirected soon</p>
 	<?php else: ?>

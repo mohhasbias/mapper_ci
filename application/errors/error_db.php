@@ -56,10 +56,12 @@ p {
 <body>
 	<div id="container">
 		<?php
-			if ($_SERVER['SERVER_NAME'] == '0.0.0.0') {
-			    define('ENVIRONMENT', 'development');
-			} else {
-			    define('ENVIRONMENT', 'production');
+			if(!defined(ENVIRONMENT)){
+				if ($_SERVER['SERVER_NAME'] == '0.0.0.0') {
+				    define('ENVIRONMENT', 'development');
+				} else {
+				    define('ENVIRONMENT', 'production');
+				}
 			}
 		?>
 

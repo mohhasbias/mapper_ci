@@ -27,8 +27,7 @@ class Issue_model extends CI_Model {
 			'photo' => $this->input->post('photo'),
 			'status' => 'issue'
 			);
-
-		var_dump($data);
-		exit();
+		
+		return $this->db->insert('issues', $data);
 	}
 }
