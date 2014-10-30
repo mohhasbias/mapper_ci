@@ -6,7 +6,7 @@
     <div class="col-xs-6" style="height: 100%;padding-bottom: 45px;">
       <h2 style="margin-top: 0;">List of Issues <a class="btn btn-success pull-right" href="<?php echo site_url('issues/create'); ?>">Add New Issue</a></h2>
       <div style="height: 100%;overflow-y:auto;overflow-x:hidden;">
-        <?php if(empty($issue)): ?>
+        <?php if(empty($issues)): ?>
           <p class="lead text-muted text-center"><em>-- No Issue Yet --</em></p>
         <?php endif; ?>
         <?php foreach($issues as $issue): ?>
