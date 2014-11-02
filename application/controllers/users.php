@@ -6,7 +6,8 @@ class Users extends CI_Controller {
 		parent::__construct();
 		$this->load->library('aauth');
 
-		if(!$this->aauth->is_loggedin())
+		// only admin can manage user
+		if(!$this->aauth->is_admin())
 		{
 			redirect('/');
 		}
