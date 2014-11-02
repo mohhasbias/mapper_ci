@@ -4,6 +4,14 @@ class Issues extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+
+		// must login
+		$this->load->library('Aauth');
+		if(!$this->aauth->is_loggedin())
+		{
+			redirect('user_session/login');
+		}
+
 		$this->load->model('issue_model');
 	}
 

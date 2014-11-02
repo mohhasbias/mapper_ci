@@ -30,14 +30,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <p class="navbar-text">
-        Hi, User
+        Welcome, <?php echo current_user(); ?>
       </p>
       <ul class="nav navbar-nav navbar-right">
         <li class="<?php echo addActiveClass('active', '/issues/index') ?>">
           <a href="<?php echo site_url('/issues/index') ?>">Home</a>
         </li>
         <li><a href="#">Member Area</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="<?php echo site_url('user_session/logout'); ?>">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

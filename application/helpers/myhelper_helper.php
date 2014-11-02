@@ -17,3 +17,21 @@ function translateFilePathToURL($full_path)
 {
 	return '/' . str_replace(constant("FCPATH"),"",$full_path);
 }
+
+function current_user()
+{
+	$ci =& get_instance();
+	$ci->load->library("Aauth");
+
+	if($ci->aauth->is_loggedin())
+	{
+		$user = $ci->aauth->get_user();
+
+		// var_dump($user);
+		return $user->name;
+	}
+	else 
+	{
+		return "Guest";
+	}
+}
