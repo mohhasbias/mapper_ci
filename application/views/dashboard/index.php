@@ -12,7 +12,9 @@
 	  <div role="tabpanel" class="tab-pane active" id="users-list">
 	  	<?php echo $this->load->view('users/index'); ?>
 	  </div>
-	  <div role="tabpanel" class="tab-pane" id="roles">Roles</div>
+	  <div role="tabpanel" class="tab-pane" id="roles">
+	  	<?php echo $this->load->view('roles/index'); ?>
+	  </div>
 	  <div role="tabpanel" class="tab-pane" id="team-list">Team List</div>
 	  <div role="tabpanel" class="tab-pane" id="categories">Categories</div>
 	</div>

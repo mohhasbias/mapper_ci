@@ -45,7 +45,7 @@ class Users extends CI_Controller {
 			if($uid)
 			{
 				$data['success'] = TRUE;
-				header('Refresh:3;/users/index');
+				header('Refresh:3;/dashboard/index');
 			}
 		}
 

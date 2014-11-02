@@ -16,10 +16,13 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('user_model');
+		$this->load->model('role_model');
 
 		$data['title'] = 'Member Area';
 
 		$data['users'] = $this->user_model->get_users();
+
+		$data['roles'] = $this->role_model->get_roles();
 
 		$this->render($data);
 	}
