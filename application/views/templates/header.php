@@ -33,10 +33,13 @@
         Welcome, <?php echo current_user(); ?>
       </p>
       <ul class="nav navbar-nav navbar-right">
-        <li class="<?php echo addActiveClass('active', '/issues/index') ?>">
+        <li class="<?php echo addActiveClass('active', '/issues/index'); ?>">
           <a href="<?php echo site_url('/issues/index') ?>">Home</a>
         </li>
-        <li><a href="#">Member Area</a></li>
+        <li class="<?php echo addActiveClass('active', '/users/index'); ?>">
+          <a href="<?php echo site_url('users/index'); ?>">Member Area</a>
+        </li>
+        <li><a><!-- separator --></a></li>
         <li><a href="<?php echo site_url('user_session/logout'); ?>">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
