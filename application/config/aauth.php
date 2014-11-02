@@ -46,7 +46,7 @@ $config['aauth'] = array(
     'remember' => ' +3 days',
 
     // pasword maximum char long (min is 4)
-    'max' => 13,
+    'max' => 25,
 
     // non alphanumeric characters that are allowed in a name
     'valid_chars' => array(' ', '\''),

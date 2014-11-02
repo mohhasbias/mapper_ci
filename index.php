@@ -23,7 +23,7 @@ date_default_timezone_set('UTC');
 
 // Domain-based environment
 //echo $_SERVER['SERVER_NAME'];
-if ($_SERVER['SERVER_NAME'] == '0.0.0.0') {
+if ($_SERVER['SERVER_NAME'] == '0.0.0.0' || $_SERVER['SERVER_NAME'] == 'localhost') {
     define('ENVIRONMENT', 'development');
 } else {
     define('ENVIRONMENT', 'production');

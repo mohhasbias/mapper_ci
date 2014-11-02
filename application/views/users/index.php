@@ -25,12 +25,14 @@
 						<div class="btn-group pull-right">
 							<a class="btn btn-default btn-xs" href="#">View</a>
 							<a class="btn btn-default btn-xs" href="#">Edit</a>
-							<a class="btn btn-default btn-xs" href="#">Delete</a>
+							<?php if(current_user()->id !== $users[$i]->id): ?>
+								<a class="btn btn-default btn-xs" href="#">Delete</a>
+							<?php endif; ?>
 						</div>
 					</td>
 				</tr>
 			<?php endfor; ?>	
 		</tbody>
 	</table>
-	<a href="#" class="btn btn-success pull-right">Add New User</a>
+	<a href="<?php echo site_url('users/create'); ?>" class="btn btn-success pull-right">Add New User</a>
 </div>

@@ -8,7 +8,7 @@ $lang['reset'] = 'Pasword Reset';
 
 $lang['email_taken'] = 'E-mail is already taken';
 $lang['email_invalid'] = 'E-mail invalid';
-$lang['pass_invalid'] = 'Password invalid';
+$lang['pass_invalid'] = 'Password too short';
 $lang['name_invalid'] = 'Name invalid';
 $lang['code'] = 'Your code is: ';
 $lang['link'] = ' or you can copy and paste falowing link http://localhost/vert/';

@@ -28,7 +28,7 @@ function current_user()
 		$user = $ci->aauth->get_user();
 
 		// var_dump($user);
-		return $user->name;
+		return $user;
 	}
 	else 
 	{

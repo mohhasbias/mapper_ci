@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			
-			<input class="btn btn-success" type="submit" name="submit" value="Save"/>
+			<input class="btn btn-success pull-right" type="submit" name="submit" value="Save"/>
 		</form> 
 	<?php endif; ?>
 </div>

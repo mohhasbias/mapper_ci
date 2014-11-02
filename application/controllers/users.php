@@ -36,6 +36,36 @@ class Users extends CI_Controller {
 		$this->render($data);
 	}
 
+	public function create()
+	{
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+
+		$data['title'] = "New User";
+
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[aauth_users.email]');
+		$this->form_validation->set_rules('password', 'Password', 'required|matches[confirm_password]|min_length[5]');
+		$this->form_validation->set_rules('confirm_password', 'Password Confirmation', 'required');
+
+		if($this->form_validation->run())
+		{
+			$email = $this->input->post('email');
+			$name = $this->input->post('name');
+			$password = $this->input->post('password');
+			
+			$uid = $this->aauth->create_user($email, $password, $name);
+
+			if($uid)
+			{
+				$data['success'] = TRUE;
+				header('Refresh:3;/users/index');
+			}
+		}
+
+		$data['user'] = $this->input->post();
+		$this->render($data);
+	}
+
 	private function render($data)
 	{
 		$uri_segment = $this->router->fetch_class() . '/' . $this->router->fetch_method();
