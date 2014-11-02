@@ -1,4 +1,5 @@
 <div class="container-fluid" style="margin-bottom: 70px;">
+	<h2>User List</h2>
 	<table class="table table-striped">
 		<thead>
 			<tr>
