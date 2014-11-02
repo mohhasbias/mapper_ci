@@ -36,11 +36,17 @@
         <li class="<?php echo addActiveClass('active', '/issues/index'); ?>">
           <a href="<?php echo site_url('/issues/index') ?>">Home</a>
         </li>
-        <li class="<?php echo addActiveClass('active', '/users/index'); ?>">
-          <a href="<?php echo site_url('users/index'); ?>">Member Area</a>
-        </li>
+        <?php if($this->aauth->is_loggedin()): ?>
+          <li class="<?php echo addActiveClass('active', '/users/index'); ?>">
+            <a href="<?php echo site_url('users/index'); ?>">Member Area</a>
+          </li>
+        <?php endif; ?>
         <li><a><!-- separator --></a></li>
-        <li><a href="<?php echo site_url('user_session/logout'); ?>">Logout</a></li>
+        <?php if($this->aauth->is_loggedin()): ?>
+          <li><a href="<?php echo site_url('user_session/logout'); ?>">Logout</a></li>
+        <?php else: ?>
+          <li><a href="<?php echo site_url('user_session/login'); ?>">Login</a></li>
+        <?php endif; ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
