@@ -32,6 +32,9 @@ function current_user()
 	}
 	else 
 	{
-		return "Guest";
+		$user = new stdClass();
+		$user->name = "Guest";
+
+		return $user;
 	}
 }

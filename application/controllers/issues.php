@@ -9,7 +9,11 @@ class Issues extends CI_Controller {
 		$this->load->library('Aauth');
 		if(!$this->aauth->is_loggedin())
 		{
-			redirect('user_session/login');
+			$method = $this->router->fetch_method();
+			if($method !== "index")
+			{
+				redirect('user_session/login');
+			}
 		}
 
 		$this->load->model('issue_model');
