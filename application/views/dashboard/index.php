@@ -8,7 +8,9 @@
 	  	<li role="presentation"><a href="#roles" role="tab" data-toggle="tab">Roles</a></li>
 	  <?php endif; ?>
 	  <li role="presentation" class="active"><a href="#team-list" role="tab" data-toggle="tab">Team List</a></li>
-	  <li role="presentation"><a href="#categories" role="tab" data-toggle="tab">Categories of Issue</a></li>
+	  <?php if($this->aauth->is_admin()): ?>	
+	  	<li role="presentation"><a href="#categories" role="tab" data-toggle="tab">Categories of Issue</a></li>
+		<?php endif; ?>
 	</ul>
 
 	<!-- Tab panes -->
@@ -26,6 +28,8 @@
 	  <div role="tabpanel" class="tab-pane active" id="team-list">
 	  	<?php echo $this->load->view('teams/index'); ?>
 	  </div>
-	  <div role="tabpanel" class="tab-pane" id="categories">Categories</div>
+	  <?php if($this->aauth->is_admin()): ?>
+	  	<div role="tabpanel" class="tab-pane" id="categories">Categories</div>
+		<?php endif; ?>
 	</div>
 </div>

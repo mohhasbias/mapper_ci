@@ -47,7 +47,7 @@
 				<tr>
 					<td></td>
 					<td></td>
-					<td><a href="#" class="btn btn-success pull-left btn-xs">Add Member</a></td>
+					<td><a href="#" class="btn btn-success pull-left btn-xs">Invite New Member</a></td>
 					<td></td>
 				</tr>
 				<tr>
@@ -59,5 +59,7 @@
 			<?php endfor; ?>	
 		</tbody>
 	</table>
-	<a href="#" class="btn btn-success pull-right">Add New Team</a>
+	<?php if($this->aauth->is_admin()): ?>
+		<a href="#" class="btn btn-success pull-right">Add New Team</a>
+	<?php endif; ?>
 </div>
