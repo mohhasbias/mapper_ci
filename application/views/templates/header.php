@@ -37,8 +37,11 @@
           <a href="<?php echo site_url('/issues/index') ?>">Home</a>
         </li>
         <?php if($this->aauth->is_loggedin()): ?>
-          <li class="<?php echo addActiveClass('active', '/users/index'); ?>">
+          <!-- <li class="<?php echo addActiveClass('active', '/users/index'); ?>">
             <a href="<?php echo site_url('users/index'); ?>">Member Area</a>
+          </li> -->
+          <li class="<?php echo addActiveClass('active', '/dashboard/index'); ?>">
+            <a href="<?php echo site_url('dashboard/index'); ?>">Member Area</a>
           </li>
         <?php endif; ?>
         <li><a><!-- separator --></a></li>

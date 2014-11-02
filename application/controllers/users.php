@@ -10,28 +10,15 @@ class Users extends CI_Controller {
 		{
 			redirect('/');
 		}
+
+		$this->load->model('user_model');
 	}
 
 	public function index()
 	{
 		$data['title'] = "User";
 
-		$data['users'] = $this->aauth->list_users();
-
-		for($i = 0; $i < count($data['users']); $i++)
-		{
-			$groups = $this->aauth->get_user_groups($data['users'][$i]->id);
-			$group_list = '';
-			for($j = 0; $j < count($groups); $j++)
-			{
-				$group_list .= $groups[$j]->name;
-				if($j < count($groups)-1)
-				{
-					$group_list .= ', ';
-				}
-			}
-			$data['users'][$i]->groups = $group_list;
-		}
+		$data['users'] = $this->user_model->get_users();
 
 		$this->render($data);
 	}
