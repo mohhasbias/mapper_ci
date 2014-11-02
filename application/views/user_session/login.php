@@ -30,7 +30,7 @@
                     <?php echo form_open('user_session/login'); ?>
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="key" class="sr-only">Password</label>

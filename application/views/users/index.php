@@ -11,7 +11,7 @@
 		</thead>
 		<tbody>
 			<?php for($i=0; $i < count($users); $i++): ?>
-				<tr>
+				<tr class="<?php echo (current_user()->id === $users[$i]->id)? 'info':'';?>">
 					<td>
 						<?php echo ($i+1); ?>
 					</td>
